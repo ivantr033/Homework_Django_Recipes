@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепты</title>
+</head>
+<body>
+    <h2>{{ recipe.upper }}</h2>
+    <ul>
+    {% for ingredient, amount in ingredients.items %}
+        <li>{{ ingredient }}: {{ amount }}</li>
+    {% empty %}
+        Такого рецепта не знаю :(
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Вернуться к списку рецептов.</a>
+</body>
+</html>
